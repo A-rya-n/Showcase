@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "items": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Brush",
+      "mdate": "13-Oct-2022",
+      "price": 45
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Paint",
+      "mdate": "13-Nov-2022",
+      "price": 65
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

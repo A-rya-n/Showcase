@@ -9,19 +9,10 @@ import {
   Paper,
 } from "@mui/material";
 
-function createData(Name, Date, Price) {
-  return { Name, Date, Price };
-}
-
-const rows = [
-  createData("Brush", "13-Oct-2022", 45),
-  createData("Paint", "14-Nov-2022", 65),
-];
-
-const DisplayData = () => {
+const DisplayData = ({ Data }) => {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }}>
+      <Table sx={{ minWidth: 650, border: 1 }}>
         <TableHead>
           <TableRow>
             <TableCell>Product Name</TableCell>
@@ -30,18 +21,13 @@ const DisplayData = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
+          {Data.map((d) => (
+            <TableRow key={d.id}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {d.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{d.mdate}</TableCell>
+              <TableCell align="right">{d.price}</TableCell>
             </TableRow>
           ))}
         </TableBody>

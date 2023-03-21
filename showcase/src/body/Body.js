@@ -7,27 +7,30 @@ import View from "./View";
 // import FetchApi from "../api/FetchApi";
 
 const Body = () => {
-  const url = "http://localhost:3000/posts";
+  const url = "http://localhost:3000/items";
   const [info, setInfo] = useState([]);
 
-  useEffect(() => {
+  const fetchData = () => {
     fetch(url)
-      .then((response) => {
-        response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setInfo(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
-  console.log(info);
 
   return (
     <>
-      <View/>
+      <View />
       <Edit />
-      <DisplayData />
+      <DisplayData Data={info}/>
     </>
   );
 };
