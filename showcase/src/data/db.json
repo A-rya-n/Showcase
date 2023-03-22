@@ -11,6 +11,18 @@
       "name": "Paint",
       "mdate": "13-Nov-2022",
       "price": 65
+    },
+    {
+      "id": 5,
+      "name": "Canvas",
+      "mdate": "31-Dec-2022",
+      "price": 120
+    },
+    {
+      "id": 6,
+      "name": "Bag",
+      "mdate": "02-Jan-2023",
+      "price": 135
     }
   ]
 }
