@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import DisplayData from "./DisplayData";
 import Add from "./Add";
+import Delete from "./Delete";
 import View from "./View";
 // import FetchApi from "../api/FetchApi";
 
@@ -29,6 +30,7 @@ const Body = () => {
   return (
     <>
       <View />
+      <Delete/>
       <Add />
       <DisplayData Data={info}/>
     </>

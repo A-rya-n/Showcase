@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { Box, Fab, Modal, Input, Typography, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { AddItem } from "./AddItem";
+import { AddItem } from "./Edit";
 
 const style = {
   position: "absolute",

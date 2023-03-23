@@ -11,12 +11,6 @@
       "name": "Paint",
       "mdate": "13-Nov-2022",
       "price": 65
-    },
-    {
-      "name": "Bag",
-      "mdate": "12-Jan-2023",
-      "price": "120",
-      "id": 3
     }
   ]
 }
