@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 import DisplayData from "./DisplayData";
-import Edit from "./Edit";
+import Add from "./Add";
 import View from "./View";
 // import FetchApi from "../api/FetchApi";
 
@@ -29,7 +29,7 @@ const Body = () => {
   return (
     <>
       <View />
-      <Edit />
+      <Add />
       <DisplayData Data={info}/>
     </>
   );
