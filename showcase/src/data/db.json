@@ -11,6 +11,24 @@
       "name": "Paint",
       "mdate": "13-Nov-2022",
       "price": 65
+    },
+    {
+      "name": "Bag",
+      "mdate": "13-Dec-2020",
+      "price": "500",
+      "id": 3
+    },
+    {
+      "name": "Artwork",
+      "mdate": "12-Jun-2020",
+      "price": "1000",
+      "id": 4
+    },
+    {
+      "name": "Manga",
+      "mdate": "21-Oct-2020",
+      "price": "1300",
+      "id": 5
     }
   ]
 }

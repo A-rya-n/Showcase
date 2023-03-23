@@ -17,6 +17,8 @@ const style = {
 };
 
 const Add = () => {
+  const refresh = () => window.location.reload(true);
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -51,6 +53,8 @@ const Add = () => {
     setName("");
     setMdate("");
     setPrice("");
+    handleClose();
+    refresh();
   }
 
   return (

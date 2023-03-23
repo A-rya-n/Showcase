@@ -17,6 +17,8 @@ const style = {
 };
 
 const Delete = () => {
+  const refresh = () => window.location.reload(true);
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -32,6 +34,8 @@ const Delete = () => {
 
     deleteItem(enteredId)
     setId('');
+    handleClose();
+    refresh();
     
   }
 
