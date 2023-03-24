@@ -1,14 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
+import Bar from "./Bar";
 import DisplayData from "./DisplayData";
-import Add from "./Add";
-import Delete from "./Delete";
-import View from "./View";
-// import FetchApi from "../api/FetchApi";
 
 const Body = () => {
-  const url = "http://localhost:3000/items";
+  const url = "http://localhost:3000/shops";
   const [info, setInfo] = useState([]);
 
   const fetchData = () => {
@@ -26,13 +23,10 @@ const Body = () => {
     fetchData();
   }, []);
 
-
   return (
     <>
-      <View />
-      <Delete/>
-      <Add />
-      <DisplayData Data={info}/>
+      <Bar />
+      <DisplayData Data={info} />
     </>
   );
 };

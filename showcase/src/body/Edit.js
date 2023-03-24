@@ -9,7 +9,3 @@ export const AddItem = async (data) => {
     console.log("Error: ", error.message);
   }
 };
-
-export const deleteItem = async (id) => {
-    return await axios.delete(`${url}/${id}`);
-}

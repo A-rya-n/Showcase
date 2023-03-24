@@ -10,8 +10,8 @@ import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
-    <Box sx={{ flexGrow: 1, marginBottom: 10 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1, marginBottom: 10, width: 1 }}>
+      <AppBar position="static" style={{backgroundColor: "#343F71"}}>
         <Toolbar>
           <Logo />
           <Title />

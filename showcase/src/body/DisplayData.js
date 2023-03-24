@@ -11,25 +11,25 @@ import {
 
 const DisplayData = ({ Data }) => {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650, border: 1 }}>
+    <TableContainer component={Paper} sx={{margin: 5}}>
+      <Table sx={{ flexGrow: 1, width: "max-content", margin: 0}}>
         <TableHead>
           <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell align="right">Product Name</TableCell>
-            <TableCell align="right">Manufacuring Date</TableCell>
-            <TableCell align="right">Price</TableCell>
+            <TableCell>Shop ID</TableCell>
+            <TableCell align="right">Shop Name</TableCell>
+            <TableCell align="right">Shop Category</TableCell>
+            <TableCell align="right">Shop Email</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {Data.map((d) => (
             <TableRow key={d.id}>
               <TableCell component="th" scope="row">
-                {d.id}
+                {d.no}
               </TableCell>
               <TableCell align="right">{d.name}</TableCell>
-              <TableCell align="right">{d.mdate}</TableCell>
-              <TableCell align="right">{d.price}</TableCell>
+              <TableCell align="right">{d.category}</TableCell>
+              <TableCell align="right">{d.mail}</TableCell>
             </TableRow>
           ))}
         </TableBody>

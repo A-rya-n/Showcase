@@ -1,7 +1,8 @@
 import * as React from "react";
 
-import { Box, Fab, Modal, Input, Typography, Button } from "@mui/material";
+import { Box, Modal, Input, Typography, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import { createTheme } from "@mui/system";
 import { AddItem } from "./Edit";
 
 const style = {
@@ -16,6 +17,14 @@ const style = {
   p: 4,
 };
 
+const btn = createTheme({
+  palette: {
+    primary: {
+      main: "#F34C19",
+    },
+  },
+});
+
 const Add = () => {
   const refresh = () => window.location.reload(true);
 
@@ -23,19 +32,19 @@ const Add = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [enteredName, setName] = React.useState('');
-  const [enteredMdate, setMdate] = React.useState('');
-  const [enteredPrice, setPrice] = React.useState('');
+  const [enteredName, setName] = React.useState("");
+  const [enteredMdate, setMdate] = React.useState("");
+  const [enteredPrice, setPrice] = React.useState("");
 
   const nameHandler = (e) => {
     setName(e.target.value);
-  }
+  };
   const mdateHandler = (e) => {
     setMdate(e.target.value);
-  }
+  };
   const priceHandler = (e) => {
     setPrice(e.target.value);
-  }
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -49,20 +58,18 @@ const Add = () => {
     console.log(itemData);
     AddItem(itemData);
 
-    
     setName("");
     setMdate("");
     setPrice("");
     handleClose();
     refresh();
-  }
-
+  };
   return (
     <div>
-      <Box sx={{ "& > :not(style)": { m: 1 }, float: "right" }}>
-        <Fab color="primary" onClick={handleOpen}>
-          <AddIcon />
-        </Fab>
+      <Box sx={{ "& > :not(style)": { m: 1 } }}>
+        <Button sx={{ backgroundColor: (theme) => btn.palette.primary.main }} variant="contained" onClick={handleOpen}>
+          ADD <AddIcon />
+        </Button>
       </Box>
       <Modal
         open={open}
@@ -72,21 +79,38 @@ const Add = () => {
       >
         <Box sx={style}>
           {/* Forms are here --> */}
-        <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 1 },
-      }}
-      noValidate
-      autoComplete="off"
-      onSubmit={submitHandler}
-    >
-      <Typography variant="h5">Enter details</Typography>
-      <Input type="text" placeholder="Product name" value={enteredName} onChange={nameHandler}/>
-      <Input type="text" placeholder="Manufacturing Date" value={enteredMdate} onChange={mdateHandler}/>
-      <Input type="number" placeholder="Price" value={enteredPrice} onChange={priceHandler}/>
-      <Button type="submit" variant="contained">ADD ITEM</Button>
-        </Box>
+          <Box
+            component="form"
+            sx={{
+              "& > :not(style)": { m: 1 },
+            }}
+            noValidate
+            autoComplete="off"
+            onSubmit={submitHandler}
+          >
+            <Typography variant="h5">Enter details</Typography>
+            <Input
+              type="text"
+              placeholder="Product name"
+              value={enteredName}
+              onChange={nameHandler}
+            />
+            <Input
+              type="text"
+              placeholder="Manufacturing Date"
+              value={enteredMdate}
+              onChange={mdateHandler}
+            />
+            <Input
+              type="number"
+              placeholder="Price"
+              value={enteredPrice}
+              onChange={priceHandler}
+            />
+            <Button type="submit" variant="contained">
+              ADD ITEM
+            </Button>
+          </Box>
         </Box>
       </Modal>
     </div>
