@@ -6,7 +6,6 @@ import Toolbar from "@mui/material/Toolbar";
 
 import Logo from "./Logo";
 import Title from "./Title";
-import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
@@ -15,7 +14,6 @@ const Header = () => {
         <Toolbar>
           <Logo />
           <Title />
-          <SearchBar />
         </Toolbar>
       </AppBar>
     </Box>

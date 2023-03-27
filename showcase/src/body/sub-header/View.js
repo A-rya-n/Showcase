@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
+import { InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 
 const View = () => {
   const [view, setView] = React.useState("");
@@ -9,22 +9,20 @@ const View = () => {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel sx={{ color: "white" }} id="simple-select">View</InputLabel>
+    
+      <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+        <InputLabel id="simple-select-filled-label">View</InputLabel>
         <Select
-          style={{ borderRadius: "10px", backgroundColor: "#F34C19", margin: "1px" }}
-          labelId="simple-select-label"
-          id="simple-select"
+          labelId="simple-select-filled-label"
+          id="simple-select-filled"
           value={view}
-          label="View"
           onChange={handleChange}
         >
           <MenuItem value={10}>Table</MenuItem>
           <MenuItem value={20}>Card</MenuItem>
         </Select>
       </FormControl>
-    </Box>
+    
   );
 };
 

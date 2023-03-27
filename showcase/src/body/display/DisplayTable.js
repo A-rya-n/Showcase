@@ -9,21 +9,24 @@ import {
   Paper,
 } from "@mui/material";
 
-const DisplayData = ({ Data }) => {
+const DisplayTable = ({ Data }) => {
   return (
-    <TableContainer component={Paper} sx={{margin: 5}}>
-      <Table sx={{ flexGrow: 1, width: "max-content", margin: 0}}>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }}>
         <TableHead>
           <TableRow>
-            <TableCell>Shop ID</TableCell>
-            <TableCell align="right">Shop Name</TableCell>
-            <TableCell align="right">Shop Category</TableCell>
-            <TableCell align="right">Shop Email</TableCell>
+            <TableCell>Shop&nbsp;No.</TableCell>
+            <TableCell align="right">Name</TableCell>
+            <TableCell align="right">Category</TableCell>
+            <TableCell align="right">E-mail</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {Data.map((d) => (
-            <TableRow key={d.id}>
+            <TableRow
+              key={d.id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
               <TableCell component="th" scope="row">
                 {d.no}
               </TableCell>
@@ -37,4 +40,4 @@ const DisplayData = ({ Data }) => {
     </TableContainer>
   );
 };
-export default DisplayData;
+export default DisplayTable;

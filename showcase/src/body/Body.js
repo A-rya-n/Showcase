@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import Bar from "./Bar";
-import DisplayData from "./DisplayData";
+import SubHeader from "./sub-header/SubHeader";
+import DisplayTable from "./display/DisplayTable";
 
 const Body = () => {
   const url = "http://localhost:3000/shops";
@@ -25,8 +25,8 @@ const Body = () => {
 
   return (
     <>
-      <Bar />
-      <DisplayData Data={info} />
+      <SubHeader/>
+      <DisplayTable Data={info} />
     </>
   );
 };
