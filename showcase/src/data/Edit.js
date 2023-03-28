@@ -2,7 +2,7 @@ import axios from "axios";
 
 const url = "http://localhost:3000/shops";
 
-export const AddItem = async (data) => {
+export const AddShop = async (data) => {
   try {
     return await axios.post(url, data);
   } catch (error) {
