@@ -1,8 +1,8 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 
 const View = () => {
-  const [view, setView] = React.useState("");
+  const [view, setView] = useState("");
 
   const handleChange = (e) => {
     setView(e.target.value);

@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import { Button } from "@mui/material";
+import { Button, TextField, Box, Stepper, Step, StepLabel } from "@mui/material";
 
-const steps = ["Enter Shop details", "Enter product details"];
+const steps = ["Enter Shop details I", "Enter shop details II"];
 
 const AddForm = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -27,6 +23,21 @@ const AddForm = () => {
             </Step>
           ))}
         </Stepper>
+        <Box
+          component="form"
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "25ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <div>
+            <TextField label="Shop No." defaultValue="" variant="standard" />
+            <TextField label="Shop Name" defaultValue="" variant="standard" />
+            <TextField label="Category" defaultValue="" variant="standard" />
+            <TextField label="E - mail" defaultValue="" variant="standard" />
+          </div>
+        </Box>
         <Button
           color="inherit"
           disabled={activeStep === 0}
