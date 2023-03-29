@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Box, Button, Modal } from "@mui/material";
+import { Box, Button, Drawer } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { createTheme } from "@mui/system";
 import AddForm from "./AddForm";
@@ -15,20 +15,13 @@ const btn = createTheme({
 });
 
 const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 600,
+  width: 500,
   bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  borderRadius: 5,
   p: 4,
 };
 
 const Add = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <div>
@@ -36,16 +29,20 @@ const Add = () => {
         <Button
           sx={{ backgroundColor: (theme) => btn.palette.primary.main }}
           variant="contained"
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => setIsDrawerOpen(true)}
         >
           ADD <AddIcon />
         </Button>
       </Box>
-      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Drawer
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+        anchor={"right"}
+      >
         <Box sx={style}>
           <AddForm />
         </Box>
-      </Modal>
+      </Drawer>
     </div>
   );
 };
