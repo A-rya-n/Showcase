@@ -9,3 +9,12 @@ export const AddShop = async (data) => {
     console.log("Error: ", error.message);
   }
 };
+
+export const DeleteShop = async (id) => {
+  try {
+    return await axios.delete(`${url}/${id}`);
+  } catch (error) {
+    console.log("Error: ", error.message);
+  }
+};
+

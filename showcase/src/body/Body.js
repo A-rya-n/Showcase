@@ -27,6 +27,7 @@ const Body = () => {
     <>
       <SubHeader/>
       <DisplayTable Data={info} />
+
     </>
   );
 };

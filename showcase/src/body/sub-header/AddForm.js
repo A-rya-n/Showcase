@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 import { AddShop } from "../../data/Edit";
 import { Button, TextField, Box, Typography } from "@mui/material";
 
 const AddForm = () => {
-  const { register, errors } = useForm();
+  // const { register, errors } = useForm();
   const [values, setValues] = useState({
     no: "",
     name: "",
@@ -15,7 +15,7 @@ const AddForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     AddShop(values);
-    console.log(values)
+    // console.log(values);
 
     setValues({
       no: "",
@@ -41,43 +41,35 @@ const AddForm = () => {
           defaultValue={values.no}
           fullWidth
           margin="normal"
-          inputRef = {...register({required: 'error message'})}
-          error={Boolean(errors.no)}
-          helperText={errors.no?.message}
-          onChange={(e) =>
-            setValues({ ...values, no: e.target.value })
-          }
+          // inputRef = {...register({required: 'error message'})}
+          // error={Boolean(errors.no)}
+          // helperText={errors.no?.message}
+          onChange={(e) => setValues({ ...values, no: e.target.value })}
         />
         <TextField
-          required = {true}
+          required={true}
           name="name"
           label="Shop Name"
           defaultValue={values.name}
           margin="normal"
-          onChange={(e) =>
-            setValues({ ...values, name: e.target.value })
-          }
+          onChange={(e) => setValues({ ...values, name: e.target.value })}
         />
         <TextField
-          required = {true}
+          required={true}
           name="category"
           label="Shop Category"
           defaultValue={values.category}
           margin="normal"
-          onChange={(e) =>
-            setValues({ ...values, category: e.target.value })
-          }
+          onChange={(e) => setValues({ ...values, category: e.target.value })}
         />
         <TextField
-          required = {true}
+          required={true}
           name="mail"
           label="E-mail"
           defaultValue={values.mail}
           fullWidth
           margin="normal"
-          onChange={(e) =>
-            setValues({ ...values, mail: e.target.value })
-          }
+          onChange={(e) => setValues({ ...values, mail: e.target.value })}
         />
         <Button type="submit" color="primary" variant="contained">
           Submit
