@@ -14,13 +14,24 @@ import { DeleteShop } from "../../data/Edit";
 
 const DisplayTable = ({ Data }) => {
   const [opened, setOpened] = useState();
+  const [modalInfo, setModalinfo] = useState({
+    no: "",
+    name: "",
+    category: "",
+    mail: "",
+  });
+
   const handleDelete = (id) => {
     DeleteShop(id);
     window.location.reload(true);
   };
 
-  const openModal = () => {
+  const openModal = (id) => {
     setOpened(true);
+
+    fetch(`http://localhost:3000/shops/${id}`)
+      .then((resposne) => resposne.json())
+      .then((res) => setModalinfo(res));
   };
   const closeModal = () => {
     setOpened(false);
@@ -32,9 +43,12 @@ const DisplayTable = ({ Data }) => {
       style={{
         maxHeight: "inherit",
         width: "85%",
+        marginTop: "1.5rem",
         marginLeft: "auto",
         marginRight: "auto",
+        border: "0.5rem outset black",
         borderRadius: "20px",
+        boxShadow: "10px 12px 2px 1px grey",
       }}
     >
       <Table>
@@ -72,7 +86,7 @@ const DisplayTable = ({ Data }) => {
                   color="info"
                   variant="contained"
                   sx={{ marginRight: 1 }}
-                  onClick={ openModal}
+                  onClick={(e) => openModal(d.id)}
                 >
                   View
                 </Button>
@@ -83,7 +97,11 @@ const DisplayTable = ({ Data }) => {
                 >
                   Delete
                 </Button>
-                <DisplayView opened={opened} close={closeModal} />
+                <DisplayView
+                  opened={opened}
+                  close={closeModal}
+                  details={modalInfo}
+                />
               </TableCell>
             </TableRow>
           ))}

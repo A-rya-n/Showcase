@@ -2,9 +2,9 @@
   "shops": [
     {
       "no": "A1",
-      "name": "Mercedes",
+      "name": "Toyota",
       "category": "Auto maker",
-      "mail": "merc@totomail.com",
+      "mail": "tyo@jpn.com",
       "id": 1
     },
     {
@@ -16,9 +16,9 @@
     },
     {
       "no": "A3",
-      "name": "Lenovo",
-      "category": "Electronics",
-      "mail": "lonovo@laptop.com",
+      "name": "Toyota",
+      "category": "Auto maker",
+      "mail": "tyo@jpn.com",
       "id": 3
     },
     {

@@ -1,4 +1,3 @@
-
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -15,20 +14,15 @@ const style = {
   p: 4,
 };
 
-const DisplayView = ({ opened, close }) => {
+const DisplayView = (props) => {
   return (
     <div>
       <Modal
-        open={opened}
-        onClose={close}
+        open={props.opened}
+        onClose={props.close}
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <Typography variant="h6">{props.details.name}</Typography>
         </Box>
       </Modal>
     </div>
