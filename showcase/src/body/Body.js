@@ -5,7 +5,7 @@ import SubHeader from "./sub-header/SubHeader";
 import DisplayTable from "./display/DisplayTable";
 
 const Body = () => {
-  const url = "http://localhost:3000/shops";
+  const url = "http://localhost:3001/shops";
   const [info, setInfo] = useState([]);
 
   const fetchData = () => {

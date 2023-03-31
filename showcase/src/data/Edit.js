@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:3000/shops";
+const url = "http://localhost:3001/shops";
 
 export const AddShop = async (data) => {
   try {

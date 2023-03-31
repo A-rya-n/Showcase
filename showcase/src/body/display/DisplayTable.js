@@ -29,7 +29,7 @@ const DisplayTable = ({ Data }) => {
   const openModal = (id) => {
     setOpened(true);
 
-    fetch(`http://localhost:3000/shops/${id}`)
+    fetch(`http://localhost:3001/shops/${id}`)
       .then((resposne) => resposne.json())
       .then((res) => setModalinfo(res));
   };
