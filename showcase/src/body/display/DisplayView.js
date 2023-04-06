@@ -15,12 +15,10 @@ const style = {
 };
 
 const DisplayView = (props) => {
+  console.log(props.opened);
   return (
     <div>
-      <Modal
-        open={props.opened}
-        onClose={props.close}
-      >
+      <Modal open={props.opened} onClose={props.close}>
         <Box sx={style}>
           <Typography variant="h6">{props.details.name}</Typography>
         </Box>

@@ -29,13 +29,13 @@ const DisplayTable = ({ Data }) => {
   const openModal = (id) => {
     setOpened(true);
 
-    fetch(`http://localhost:3001/shops/${id}`)
+    fetch(`http://localhost:3000/shops/${id}`)
       .then((resposne) => resposne.json())
       .then((res) => setModalinfo(res));
   };
-  const closeModal = () => {
-    setOpened(false);
-  };
+  // const closeModal = () => {
+  //   setOpened(false);
+  // };
 
   return (
     <TableContainer
@@ -46,6 +46,7 @@ const DisplayTable = ({ Data }) => {
         marginTop: "1.5rem",
         marginLeft: "auto",
         marginRight: "auto",
+        marginBottom: "1.5rem",
         border: "0.5rem outset black",
         borderRadius: "20px",
         boxShadow: "10px 12px 2px 1px grey",
@@ -99,7 +100,7 @@ const DisplayTable = ({ Data }) => {
                 </Button>
                 <DisplayView
                   opened={opened}
-                  close={closeModal}
+                  close={() => setOpened(false)}
                   details={modalInfo}
                 />
               </TableCell>

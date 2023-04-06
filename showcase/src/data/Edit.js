@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:3001/shops";
+const url = "http://localhost:3000/shops";
 
 export const AddShop = async (data) => {
   try {
@@ -17,4 +17,3 @@ export const DeleteShop = async (id) => {
     console.log("Error: ", error.message);
   }
 };
-
