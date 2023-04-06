@@ -9,22 +9,22 @@
     },
     {
       "no": "A2",
-      "name": "Toyota",
-      "category": "Auto maker",
-      "mail": "tyo@jpn.com",
+      "name": "Twitter",
+      "category": "Social media company",
+      "mail": "elon.twit@twitter.com",
       "id": 2
     },
     {
       "no": "A3",
-      "name": "Toyota",
-      "category": "Auto maker",
-      "mail": "tyo@jpn.com",
+      "name": "Acer",
+      "category": "Electronics",
+      "mail": "acerUS.11@ace.com",
       "id": 3
     },
     {
       "no": "A4",
       "name": "Nintendo",
-      "category": "Electronics",
+      "category": "Video game company",
       "mail": "nintendo@jpn.co.jp",
       "id": 4
     }

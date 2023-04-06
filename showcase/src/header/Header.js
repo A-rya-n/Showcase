@@ -5,6 +5,7 @@ import { AppBar, Box, Toolbar } from "@mui/material";
 import Logo from "./Logo";
 import Title from "./Title";
 import Summary from "./Summary";
+import Dark from "./DarkIcon";
 
 const Header = () => {
   return (
@@ -14,6 +15,7 @@ const Header = () => {
           <Toolbar>
             <Logo />
             <Title />
+            <Dark/>
           </Toolbar>
         </AppBar>
       </Box>
