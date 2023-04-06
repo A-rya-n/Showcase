@@ -1,18 +1,16 @@
-import React from 'react';
-import { Box, TextField } from '@mui/material';
+import React from "react";
+import { Box, TextField } from "@mui/material";
 
 const SearchBar = () => {
   return (
-    
     <Box
       sx={{
         width: 500,
-        maxWidth: '100%',
+        maxWidth: "100%",
       }}
     >
-      <TextField fullWidth label="Search" variant='standard'/>
+      <TextField fullWidth label="Search" variant="standard" />
     </Box>
-    
   );
 };
 

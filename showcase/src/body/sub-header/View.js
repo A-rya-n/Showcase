@@ -9,20 +9,18 @@ const View = () => {
   };
 
   return (
-    
-      <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="simple-select-filled-label">View</InputLabel>
-        <Select
-          labelId="simple-select-filled-label"
-          id="simple-select-filled"
-          value={view}
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Table</MenuItem>
-          <MenuItem value={20}>Card</MenuItem>
-        </Select>
-      </FormControl>
-    
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="simple-select-filled-label">View</InputLabel>
+      <Select
+        labelId="simple-select-filled-label"
+        id="simple-select-filled"
+        value={view}
+        onChange={handleChange}
+      >
+        <MenuItem value={10}>Table</MenuItem>
+        <MenuItem value={20}>Card</MenuItem>
+      </Select>
+    </FormControl>
   );
 };
 

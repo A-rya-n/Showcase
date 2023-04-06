@@ -4,7 +4,6 @@ import { Box, Button, Drawer } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { createTheme } from "@mui/system";
 import AddForm from "./AddForm";
-// import { AddItem } from "../../data/Edit";
 
 const btn = createTheme({
   palette: {
@@ -22,6 +21,9 @@ const style = {
 
 const Add = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
 
   return (
     <div>
@@ -34,13 +36,9 @@ const Add = () => {
           ADD <AddIcon />
         </Button>
       </Box>
-      <Drawer
-        open={isDrawerOpen}
-        onClose={() => setIsDrawerOpen(false)}
-        anchor={"right"}
-      >
+      <Drawer open={isDrawerOpen} onClose={closeDrawer} anchor={"right"}>
         <Box sx={style}>
-          <AddForm />
+          <AddForm closeHandler={closeDrawer} />
         </Box>
       </Drawer>
     </div>

@@ -33,10 +33,6 @@ const DisplayTable = ({ Data }) => {
       .then((resposne) => resposne.json())
       .then((res) => setModalinfo(res));
   };
-  // const closeModal = () => {
-  //   setOpened(false);
-  // };
-
   return (
     <TableContainer
       component={Paper}
@@ -46,7 +42,7 @@ const DisplayTable = ({ Data }) => {
         marginTop: "1.5rem",
         marginLeft: "auto",
         marginRight: "auto",
-        marginBottom: "1.5rem",
+        marginBottom: "2rem",
         border: "0.5rem outset black",
         borderRadius: "20px",
         boxShadow: "10px 12px 2px 1px grey",

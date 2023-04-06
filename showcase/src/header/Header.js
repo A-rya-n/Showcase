@@ -15,7 +15,7 @@ const Header = () => {
           <Toolbar>
             <Logo />
             <Title />
-            <Dark/>
+            <Dark />
           </Toolbar>
         </AppBar>
       </Box>

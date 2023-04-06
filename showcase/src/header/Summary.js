@@ -10,7 +10,7 @@ const Summary = (props) => {
         <img src={cssimage} alt="A very delicious meal!" />
       </div>
       <section className={classes.summary}>
-        <h2>Showcase, </h2>
+        <h2>Showcase </h2>
         <p>
           A CRUD based application where you can where you can create, remove,
           update and delete your shops and their products.
