@@ -27,6 +27,20 @@
       "category": "Video game company",
       "mail": "nintendo@jpn.co.jp",
       "id": 4
+    },
+    {
+      "no": "A5",
+      "name": "Sony",
+      "category": "Electronics",
+      "mail": "sonySon.12@mail.com",
+      "id": 5
+    },
+    {
+      "no": "A6",
+      "name": "Apple",
+      "category": "Tech company",
+      "mail": "appleid.11@steve.com",
+      "id": 6
     }
   ]
 }
