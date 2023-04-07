@@ -26,6 +26,7 @@ const AddForm = (props) => {
     }),
     onSubmit: (values) => {
       AddShop(values);
+      props.closeHandler();
     },
   });
 
