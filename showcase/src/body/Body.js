@@ -25,7 +25,7 @@ const Body = () => {
 
   return (
     <>
-      <SubHeader />
+      <SubHeader Data={info} />
       <DisplayTable Data={info} />
     </>
   );

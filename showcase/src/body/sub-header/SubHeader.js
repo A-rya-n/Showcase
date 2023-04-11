@@ -1,8 +1,8 @@
-import View from "./View";
+import Count from "./Count";
 import SearchBar from "./SearchBar";
 import Add from "./Add";
 
-const SubHeader = () => {
+const SubHeader = (props) => {
   return (
     <div
       style={{
@@ -12,7 +12,7 @@ const SubHeader = () => {
         padding: "0%",
       }}
     >
-      <View />
+      <Count counting={props.Data} />
       <SearchBar />
       <Add />
     </div>
