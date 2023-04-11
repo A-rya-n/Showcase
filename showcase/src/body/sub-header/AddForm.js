@@ -2,7 +2,8 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { AddShop } from "../../data/Edit";
-import { Button, TextField, Box, Typography } from "@mui/material";
+import { TextField, Box, Typography } from "@mui/material";
+import classes from "./AddForm.module.css";
 
 const AddForm = (props) => {
   const formik = useFormik({
@@ -15,14 +16,16 @@ const AddForm = (props) => {
     validationSchema: Yup.object({
       no: Yup.string()
         .max(4, "Must be 4 characters or less")
-        .required("Required"),
+        .required("Shop No. is required"),
       name: Yup.string()
         .max(15, "Must be 15 characters or less")
-        .required("Required"),
+        .required("Shop name is required"),
       category: Yup.string()
         .max(15, "Must be 15 characters or less")
-        .required("Required"),
-      mail: Yup.string().email("Invalid E-mail address").required("Required"),
+        .required("Shop category is required"),
+      mail: Yup.string()
+        .email("Invalid E-mail address")
+        .required("E-mail is required"),
     }),
     onSubmit: (values) => {
       AddShop(values);
@@ -37,53 +40,72 @@ const AddForm = (props) => {
       noValidate
       autoComplete="off"
       onSubmit={formik.handleSubmit}
+      className={classes.form}
     >
-      <Typography variant="h5">Register</Typography>
+      <Typography variant="h4" className={classes.title}>
+        Welcome
+      </Typography>
+      <Typography variant="h5" className={classes.subtitle}>
+        Register your shop here.
+      </Typography>
+
       <div>
-        <label htmlFor="no">Shop No.</label>
+        <div>
+          <TextField
+            className={classes.input}
+            id="no"
+            type="text"
+            label="Shop No."
+            {...formik.getFieldProps("no")}
+          />
+          {formik.touched.no && formik.errors.no ? (
+            <div style={{ color: "red" }}>{formik.errors.no}</div>
+          ) : null}
+        </div>
+
         <TextField
-          id="no"
-          // name="no"
+          className={classes.input}
+          id="name"
           type="text"
-          // onChange={formik.handleChange}
-          // onBlur={formik.handleBlur}
-          // value={formik.values.no}
-          {...formik.getFieldProps("no")}
+          label="Shop Name"
+          {...formik.getFieldProps("name")}
         />
-        {formik.touched.no && formik.errors.no ? (
-          <div>{formik.errors.no}</div>
-        ) : null}
-        <label htmlFor="name">Shop Name</label>
-        <TextField id="name" type="text" {...formik.getFieldProps("name")} />
         {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
+          <div style={{ color: "red" }}>{formik.errors.name}</div>
         ) : null}
-        <label htmlFor="category">Category</label>
+
         <TextField
+          className={classes.input}
           id="category"
           type="text"
+          label="Category"
           {...formik.getFieldProps("category")}
         />
         {formik.touched.category && formik.errors.category ? (
-          <div>{formik.errors.category}</div>
-        ) : null}
-        <label htmlFor="mail">E-mail</label>
-        <TextField id="mail" type="email" {...formik.getFieldProps("mail")} />
-        {formik.touched.mail && formik.errors.mail ? (
-          <div>{formik.errors.mail}</div>
+          <div style={{ color: "red" }}>{formik.errors.category}</div>
         ) : null}
 
-        <Button
+        <TextField
+          className={classes.input}
+          id="mail"
+          type="email"
+          label="E-mail"
+          {...formik.getFieldProps("mail")}
+        />
+        {formik.touched.mail && formik.errors.mail ? (
+          <div style={{ color: "red" }}>{formik.errors.mail}</div>
+        ) : null}
+
+        <button type="submit" className={classes.submit}>
+          Submit
+        </button>
+        <button
+          className={classes.close}
           type="button"
-          color="error"
-          variant="contained"
           onClick={props.closeHandler}
         >
           Close
-        </Button>
-        <Button type="submit" color="primary" variant="contained">
-          Submit
-        </Button>
+        </button>
       </div>
     </Box>
   );
