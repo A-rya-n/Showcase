@@ -31,7 +31,3 @@
   object-fit: cover;
   transform: rotateZ(-5deg) translateY(-6rem) translateX(-5rem);
 }
-
-.drawer {
-  background-image: url("../assets/off-white.jpg");
-}

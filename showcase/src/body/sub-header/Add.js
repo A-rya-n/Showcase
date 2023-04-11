@@ -16,7 +16,8 @@ const btn = createTheme({
 
 const style = {
   width: 500,
-  bgcolor: "background.paper",
+  heigth: "100%",
+  bgcolor: "#FEFF86",
   p: 4,
 };
 // const styles = (theme) => ({
@@ -46,6 +47,7 @@ const Add = () => {
         open={isDrawerOpen}
         onClose={closeDrawer}
         anchor={"right"}
+
         // className={styles.drawerPaper}
       >
         <Box sx={style}>

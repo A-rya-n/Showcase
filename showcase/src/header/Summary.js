@@ -7,7 +7,7 @@ const Summary = (props) => {
   return (
     <>
       <div className={classes["main-image"]}>
-        <img src={cssimage} alt="A very delicious meal!" />
+        <img src={cssimage} alt="A coding screen!" />
       </div>
       <section className={classes.summary}>
         <h2>Showcase </h2>
