@@ -34,6 +34,13 @@
       "category": "Electronics",
       "mail": "sonySon.12@mail.com",
       "id": 5
+    },
+    {
+      "no": "A6",
+      "name": "Longines",
+      "category": "Watch Maker",
+      "mail": "longin@swiss.com",
+      "id": 6
     }
   ]
 }
