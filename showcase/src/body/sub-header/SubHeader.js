@@ -13,7 +13,7 @@ const SubHeader = (props) => {
       }}
     >
       <Count counting={props.Data} />
-      <SearchBar />
+      <SearchBar searching={props.Data} />
       <Add />
     </div>
   );

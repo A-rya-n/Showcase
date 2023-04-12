@@ -17,3 +17,11 @@ export const DeleteShop = async (id) => {
     console.log("Error: ", error.message);
   }
 };
+
+export const GetShop = async (name) => {
+  try {
+    return await axios.get(`${url}?name=${name}`);
+  } catch (error) {
+    console.log("Error: ", error.message);
+  }
+};
