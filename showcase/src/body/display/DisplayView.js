@@ -1,15 +1,14 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import { Backdrop } from "@mui/material";
+import { Typography, Modal, Backdrop, Divider } from "@mui/material";
 
 const style = {
+  bgcolor: "#343F71",
+  color: "#eee",
   position: "relative",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
+  width: 500,
   border: "none",
   boxShadow: 2,
   borderRadius: "15px",
@@ -31,10 +30,52 @@ const DisplayView = (props) => {
         sx={{ "& .MuiBackdrop-root": { backgroundColor: "transparent" } }}
       >
         <Box sx={style}>
-          <Typography variant="h1">{props.details.no}</Typography>
-          <Typography variant="h2">{props.details.name}</Typography>
-          <Typography variant="h3">{props.details.category}</Typography>
-          <Typography variant="h6">{props.details.mail}</Typography>
+          <Typography
+            variant="h1"
+            sx={{
+              backgroundColor: "#F34C19",
+              borderRadius: "10px",
+              width: "fit-content",
+              padding: 2,
+            }}
+          >
+            {props.details.no}
+          </Typography>
+          <Divider
+            variant="middle"
+            sx={{ backgroundColor: "white", marginTop: 3, marginBottom: 3 }}
+          />
+          <Typography
+            variant="h3"
+            sx={{
+              width: "fit-content",
+              padding: 2,
+              display: "inline",
+              marginRight: 2,
+            }}
+          >
+            {props.details.name}
+          </Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              width: "fit-content",
+              padding: 2,
+              display: "inline",
+            }}
+          >
+            {props.details.category}
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              width: "fit-content",
+              padding: 2,
+              marginTop: 3,
+            }}
+          >
+            {props.details.mail}
+          </Typography>
         </Box>
       </Modal>
     </div>

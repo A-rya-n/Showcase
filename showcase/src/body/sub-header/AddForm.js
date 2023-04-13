@@ -36,13 +36,13 @@ const AddForm = (props) => {
   return (
     <Box
       component="form"
-      sx={{ width: 500, maxWidth: "100%", "& > :not(style)": { m: 1 } }}
+      sx={{ width: 500, maxWidth: "100%", "& > :not(style)": { m: 2 } }}
       noValidate
       autoComplete="off"
       onSubmit={formik.handleSubmit}
       className={classes.form}
     >
-      <Typography variant="h4" className={classes.title}>
+      <Typography variant="h4" className={classes.title} sx={{ marginTop: 10 }}>
         Welcome
       </Typography>
       <Typography variant="h5" className={classes.subtitle}>
@@ -50,18 +50,16 @@ const AddForm = (props) => {
       </Typography>
 
       <div>
-        <div>
-          <TextField
-            className={classes.input}
-            id="no"
-            type="text"
-            label="Shop No."
-            {...formik.getFieldProps("no")}
-          />
-          {formik.touched.no && formik.errors.no ? (
-            <div style={{ color: "red" }}>{formik.errors.no}</div>
-          ) : null}
-        </div>
+        <TextField
+          className={classes.input}
+          id="no"
+          type="text"
+          label="Shop No."
+          {...formik.getFieldProps("no")}
+        />
+        {formik.touched.no && formik.errors.no ? (
+          <div style={{ color: "red" }}>{formik.errors.no}</div>
+        ) : null}
 
         <TextField
           className={classes.input}
