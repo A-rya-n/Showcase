@@ -31,6 +31,9 @@ const Add = () => {
   const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
+  const openDrawer = () => {
+    setIsDrawerOpen(true);
+  };
 
   return (
     <div>
@@ -43,15 +46,9 @@ const Add = () => {
           ADD <AddIcon />
         </Button>
       </Box>
-      <Drawer
-        open={isDrawerOpen}
-        onClose={closeDrawer}
-        anchor={"right"}
-
-        // className={styles.drawerPaper}
-      >
+      <Drawer open={isDrawerOpen} onClose={closeDrawer} anchor={"right"}>
         <Box sx={style}>
-          <AddForm closeHandler={closeDrawer} />
+          <AddForm closeHandler={closeDrawer} openHandler={openDrawer} />
         </Box>
       </Drawer>
     </div>

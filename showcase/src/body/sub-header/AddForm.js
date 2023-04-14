@@ -125,7 +125,7 @@ export const ShopForm = (props) => {
       <button
         type="submit"
         className={classes.submit}
-        onClick={() => props.shopHandler(Shopformik)}
+        onClick={() => {props.shopHandler(Shopformik)}}
       >
         Submit
       </button>
