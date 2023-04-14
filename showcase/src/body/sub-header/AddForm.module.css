@@ -1,5 +1,6 @@
 .form {
-  background-color: #15172b;
+  /* background-color: #15172b; */
+  background-color: #eee;
   border-radius: 20px;
   box-shadow: 10px 5px 1px #fbc40e;
   box-sizing: border-box;
@@ -8,13 +9,13 @@
 }
 
 .title {
-  color: #eee;
+  color: #15172b;
   font-family: sans-serif;
   font-weight: 600;
 }
 
 .subtitle {
-  color: #eee;
+  color: #15172b;
   font-family: sans-serif;
   font-weight: 600;
 }

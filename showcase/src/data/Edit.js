@@ -1,10 +1,18 @@
 import axios from "axios";
 
 const url = "http://localhost:3000/shops";
+const urlP = "http://localhost:3002/products";
 
 export const AddShop = async (data) => {
   try {
     return await axios.post(url, data);
+  } catch (error) {
+    console.log("Error: ", error.message);
+  }
+};
+export const AddProduct = async (data) => {
+  try {
+    return await axios.post(urlP, data);
   } catch (error) {
     console.log("Error: ", error.message);
   }
