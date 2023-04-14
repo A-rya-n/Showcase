@@ -62,7 +62,6 @@ export const ShopForm = (props) => {
     validationSchema: shopValidationSchema,
     onSubmit: (values) => {
       AddShop(values);
-      // props.closeHandler();
     },
   });
 
@@ -77,6 +76,7 @@ export const ShopForm = (props) => {
 
       <div>
         <TextField
+          sx={{ marginBottom: 1 }}
           className={classes.input}
           id="no"
           type="text"
@@ -88,6 +88,7 @@ export const ShopForm = (props) => {
         ) : null}
 
         <TextField
+          sx={{ marginBottom: 1 }}
           className={classes.input}
           id="name"
           type="text"
@@ -99,6 +100,7 @@ export const ShopForm = (props) => {
         ) : null}
 
         <TextField
+          sx={{ marginBottom: 1 }}
           className={classes.input}
           id="category"
           type="text"
@@ -120,6 +122,13 @@ export const ShopForm = (props) => {
           <div style={{ color: "red" }}>{Shopformik.errors.mail}</div>
         ) : null}
       </div>
+      <button
+        type="submit"
+        className={classes.submit}
+        onClick={() => props.shopHandler(Shopformik)}
+      >
+        Submit
+      </button>
     </>
   );
 };
@@ -136,7 +145,6 @@ export const ProductForm = (props) => {
     validationSchema: productValidationSchema,
     onSubmit: (values) => {
       AddProduct(values);
-      // props.closeHandler();
     },
   });
 
@@ -148,6 +156,7 @@ export const ProductForm = (props) => {
 
       <div>
         <TextField
+          sx={{ marginBottom: 1 }}
           className={classes.input}
           id="Pname"
           type="text"
@@ -159,6 +168,7 @@ export const ProductForm = (props) => {
         ) : null}
 
         <TextField
+          sx={{ marginBottom: 1 }}
           className={classes.input}
           id="Pcategory"
           type="text"
@@ -170,6 +180,7 @@ export const ProductForm = (props) => {
         ) : null}
 
         <TextField
+          sx={{ marginBottom: 1 }}
           className={classes.input}
           id="price"
           type="number"
@@ -181,10 +192,11 @@ export const ProductForm = (props) => {
         ) : null}
 
         <TextField
+          sx={{ marginBottom: 1 }}
           className={classes.input}
           id="mdate"
           type="date"
-          label="Product Manufacturing date"
+          // label="Product Manufacturing date"
           {...Productformik.getFieldProps("mdate")}
         />
         {Productformik.touched.mdate && Productformik.errors.mdate ? (
@@ -202,6 +214,13 @@ export const ProductForm = (props) => {
           <div style={{ color: "red" }}>{Productformik.errors.desc}</div>
         ) : null}
       </div>
+      <button
+        type="submit"
+        className={classes.submit}
+        onClick={() => props.productHandler(Productformik)}
+      >
+        Submit
+      </button>
     </>
   );
 };
@@ -216,6 +235,8 @@ export const Finished = () => {
 
 const AddForm = (props) => {
   const [activeStep, setActiveStep] = useState(0);
+  const [shopForm, setShopForm] = useState("");
+  const [productForm, setProductForm] = useState("");
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -225,12 +246,32 @@ const AddForm = (props) => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  const shopFormHandler = (forms) => {
+    setShopForm(forms);
+  };
+  const productFormHandler = (forms) => {
+    setProductForm(forms);
+  };
+
+  const handleSubmit = () => {
+    switch (activeStep) {
+      case 0:
+        shopForm.handleSubmit();
+        break;
+      case 1:
+        productForm.handleSubmit();
+        break;
+      default:
+        return "Error";
+    }
+  };
+
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return <ShopForm />;
+        return <ShopForm shopHandler={shopFormHandler} />;
       case 1:
-        return <ProductForm />;
+        return <ProductForm productHandler={productFormHandler} />;
       case 2:
         return <Finished />;
       default:
@@ -244,7 +285,7 @@ const AddForm = (props) => {
       sx={{ width: 500, maxWidth: "100%", "& > :not(style)": { m: 2 } }}
       noValidate
       autoComplete="off"
-      // onSubmit={formik.handleSubmit}
+      onSubmit={handleSubmit}
       className={classes.form}
     >
       <Stepper activeStep={activeStep}>
@@ -258,9 +299,6 @@ const AddForm = (props) => {
       </Stepper>
       {activeStep === steps.length ? (
         <>
-          {/* <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography> */}
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Box sx={{ flex: "1 1 auto" }} />
             {/* <button type="submit" className={classes.submit}>

@@ -1,3 +1,12 @@
 {
-    "products": []
+  "products": [
+    {
+      "Pname": "Mercedes A-class",
+      "Pcategory": "Car",
+      "price": 8000000,
+      "mdate": "2023-04-05",
+      "desc": "A hatchback mercedes car.",
+      "id": 1
+    }
+  ]
 }

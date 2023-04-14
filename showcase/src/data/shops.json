@@ -41,6 +41,13 @@
       "category": "Watch Maker",
       "mail": "longin@swiss.com",
       "id": 6
+    },
+    {
+      "no": "A7",
+      "name": "Mercedes",
+      "category": "Auto Maker",
+      "mail": "merc@toto.com",
+      "id": 7
     }
   ]
 }
