@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
-import { Typography, Modal, Backdrop, Divider } from "@mui/material";
+import { Typography, Modal, Backdrop, Divider, Chip } from "@mui/material";
+import DisplayProduct from "./DisplayProduct";
 
 const style = {
   bgcolor: "#343F71",
@@ -8,7 +9,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 500,
+  width: 700,
   border: "none",
   boxShadow: 2,
   borderRadius: "15px",
@@ -16,7 +17,7 @@ const style = {
 };
 
 const DisplayView = (props) => {
-  console.log(props.opened);
+  // console.log(props.opened);
   return (
     <div>
       <Backdrop
@@ -76,6 +77,11 @@ const DisplayView = (props) => {
           >
             {props.details.mail}
           </Typography>
+          <Divider variant="middle" sx={{ marginTop: 3, marginBottom: 3 }}>
+            <Chip label="PRODUCTS" sx={{ color: "white" }} />
+          </Divider>
+          <DisplayProduct Snum={props.details.no} Snam={props.details.name} />
+          {/* {console.log("Hello",props.details.no, props.details.name)} */}
         </Box>
       </Modal>
     </div>

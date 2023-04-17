@@ -33,3 +33,10 @@ export const GetShop = async (name) => {
     console.log("Error: ", error.message);
   }
 };
+export const GetProduct = async (no, name) => {
+  try {
+    return await axios.get(`${urlP}?Sno=${no}&Sname=${name}`);
+  } catch (error) {
+    console.log("Error: ", error.message);
+  }
+};
