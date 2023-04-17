@@ -22,11 +22,14 @@ const DisplayView = (props) => {
     <div>
       <Backdrop
         open={props.opened}
+        // open={true}
         sx={{ backgroundColor: "rgba( 0 , 0 , 0 , 0.3 )", zIndex: 0 }}
         onClick={props.close}
       />
+
       <Modal
         open={props.opened}
+        // open={true}
         onClose={props.close}
         sx={{ "& .MuiBackdrop-root": { backgroundColor: "transparent" } }}
       >

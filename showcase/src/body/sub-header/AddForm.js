@@ -61,6 +61,7 @@ export const ShopForm = (props) => {
     },
     validationSchema: shopValidationSchema,
     onSubmit: (values) => {
+      // console.log(values);
       AddShop(values);
     },
   });
@@ -125,7 +126,9 @@ export const ShopForm = (props) => {
       <button
         type="submit"
         className={classes.submit}
-        onClick={() => {props.shopHandler(Shopformik)}}
+        onClick={() => {
+          props.shopHandler(Shopformik);
+        }}
       >
         Submit
       </button>
@@ -301,9 +304,6 @@ const AddForm = (props) => {
         <>
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Box sx={{ flex: "1 1 auto" }} />
-            {/* <button type="submit" className={classes.submit}>
-              Submit
-            </button> */}
             <button
               type="button"
               className={classes.close}
@@ -316,7 +316,6 @@ const AddForm = (props) => {
       ) : (
         <>
           {getStepContent(activeStep)}
-          {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography> */}
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Button
               color="inherit"

@@ -16,7 +16,7 @@ const btn = createTheme({
 
 const style = {
   width: 500,
-  heigth: "100%",
+  height: '100%',
   bgcolor: "#FEFF86",
   p: 4,
 };

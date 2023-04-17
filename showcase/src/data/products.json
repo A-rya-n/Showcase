@@ -9,6 +9,14 @@
       "Sno": "A7",
       "Sname": "Mercedes",
       "id": 1
+    },
+    {
+      "Pname": "Breath of the Wild",
+      "Pcategory": "Games",
+      "price": 290,
+      "mdate": "2023-04-12",
+      "desc": "blah blah",
+      "id": 2
     }
   ]
 }

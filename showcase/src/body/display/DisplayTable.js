@@ -13,7 +13,7 @@ import DisplayView from "./DisplayView";
 import { DeleteShop } from "../../data/Edit";
 
 const DisplayTable = ({ Data }) => {
-  const [opened, setOpened] = useState();
+  const [opened, setOpened] = useState(false);
   const [modalInfo, setModalinfo] = useState({
     no: "",
     name: "",
