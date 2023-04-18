@@ -48,6 +48,13 @@
       "category": "Auto Maker",
       "mail": "merc@toto.com",
       "id": 7
+    },
+    {
+      "no": "A8",
+      "name": "Square Enix",
+      "category": "Game Company",
+      "mail": "Square.enix@jpn.jp",
+      "id": 8
     }
   ]
 }

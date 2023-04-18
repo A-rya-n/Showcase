@@ -61,7 +61,6 @@ export const ShopForm = (props) => {
     },
     validationSchema: shopValidationSchema,
     onSubmit: (values) => {
-      // console.log(values);
       AddShop(values);
     },
   });
@@ -124,13 +123,14 @@ export const ShopForm = (props) => {
         ) : null}
       </div>
       <button
-        type="submit"
+        // type="submit"
+        type="button"
         className={classes.submit}
         onClick={() => {
           props.shopHandler(Shopformik);
         }}
       >
-        Submit
+        Next
       </button>
     </>
   );
@@ -144,6 +144,8 @@ export const ProductForm = (props) => {
       price: "",
       mdate: "",
       desc: "",
+      Sno: props.shopID,
+      Sname: props.shopName,
     },
     validationSchema: productValidationSchema,
     onSubmit: (values) => {
@@ -218,11 +220,11 @@ export const ProductForm = (props) => {
         ) : null}
       </div>
       <button
-        type="submit"
+        type="button"
         className={classes.submit}
         onClick={() => props.productHandler(Productformik)}
       >
-        Submit
+        Next
       </button>
     </>
   );
@@ -257,16 +259,13 @@ const AddForm = (props) => {
   };
 
   const handleSubmit = () => {
-    switch (activeStep) {
-      case 0:
-        shopForm.handleSubmit();
-        break;
-      case 1:
-        productForm.handleSubmit();
-        break;
-      default:
-        return "Error";
-    }
+    shopForm.handleSubmit();
+    productForm.handleSubmit();
+  };
+
+  const closing = () => {
+    props.closeHandler();
+    window.location.reload();
   };
 
   const getStepContent = (step) => {
@@ -274,7 +273,13 @@ const AddForm = (props) => {
       case 0:
         return <ShopForm shopHandler={shopFormHandler} />;
       case 1:
-        return <ProductForm productHandler={productFormHandler} />;
+        return (
+          <ProductForm
+            productHandler={productFormHandler}
+            shopID={shopForm.values?.no}
+            shopName={shopForm.values?.name}
+          />
+        );
       case 2:
         return <Finished />;
       default:
@@ -307,7 +312,7 @@ const AddForm = (props) => {
             <button
               type="button"
               className={classes.close}
-              onClick={() => props.closeHandler()}
+              onClick={() => closing()}
             >
               Close
             </button>
@@ -328,7 +333,17 @@ const AddForm = (props) => {
             <Box sx={{ flex: "1 1 auto" }} />
 
             <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? "Finish" : "Next"}
+              {activeStep === steps.length - 1 ? (
+                <Typography
+                  type="submit"
+                  // className={classes.close}
+                  onClick={() => handleSubmit()}
+                >
+                  Submit
+                </Typography>
+              ) : (
+                "Next"
+              )}
             </Button>
           </Box>
         </>

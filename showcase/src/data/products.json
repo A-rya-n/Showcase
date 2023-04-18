@@ -11,11 +11,13 @@
       "id": 1
     },
     {
-      "Pname": "Breath of the Wild",
+      "Pname": "Final Fantasy II",
       "Pcategory": "Games",
-      "price": 290,
-      "mdate": "2023-04-12",
-      "desc": "blah blah",
+      "price": 565,
+      "mdate": "2023-04-16",
+      "desc": "An RPG japanese game",
+      "Sno": "A8",
+      "Sname": "Square Enix",
       "id": 2
     }
   ]
