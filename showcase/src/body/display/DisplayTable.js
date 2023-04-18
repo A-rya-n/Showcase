@@ -9,8 +9,10 @@ import {
   Paper,
   Button,
 } from "@mui/material";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import DeleteIcon from "@mui/icons-material/Delete";
 import DisplayView from "./DisplayView";
-import { DeleteShop } from "../../data/Edit";
+import { DeleteShop, DeleteProduct } from "../../data/Edit";
 
 const DisplayTable = ({ Data }) => {
   const [opened, setOpened] = useState(false);
@@ -21,8 +23,9 @@ const DisplayTable = ({ Data }) => {
     mail: "",
   });
 
-  const handleDelete = (id) => {
+  const handleDelete = (id, num, nam) => {
     DeleteShop(id);
+    DeleteProduct(num, nam);
     window.location.reload(true);
   };
 
@@ -85,14 +88,14 @@ const DisplayTable = ({ Data }) => {
                   sx={{ marginRight: 1 }}
                   onClick={(e) => openModal(d.id)}
                 >
-                  View
+                  <VisibilityIcon />
                 </Button>
                 <Button
                   color="error"
                   variant="contained"
-                  onClick={() => handleDelete(d.id)}
+                  onClick={() => handleDelete(d.id, d.no, d.name)}
                 >
-                  Delete
+                  <DeleteIcon />
                 </Button>
                 <DisplayView
                   opened={opened}

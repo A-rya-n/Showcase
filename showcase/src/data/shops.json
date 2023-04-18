@@ -34,27 +34,6 @@
       "category": "Electronics",
       "mail": "sonySon.12@mail.com",
       "id": 5
-    },
-    {
-      "no": "A6",
-      "name": "Longines",
-      "category": "Watch Maker",
-      "mail": "longin@swiss.com",
-      "id": 6
-    },
-    {
-      "no": "A7",
-      "name": "Mercedes",
-      "category": "Auto Maker",
-      "mail": "merc@toto.com",
-      "id": 7
-    },
-    {
-      "no": "A8",
-      "name": "Square Enix",
-      "category": "Game Company",
-      "mail": "Square.enix@jpn.jp",
-      "id": 8
     }
   ]
 }

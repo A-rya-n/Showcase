@@ -12,6 +12,9 @@ import {
   StepLabel,
   Button,
 } from "@mui/material";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import CategoryIcon from "@mui/icons-material/Category";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import classes from "./AddForm.module.css";
 
 const steps = ["Shop Details", "Product Details", "Finish"];
@@ -130,7 +133,7 @@ export const ShopForm = (props) => {
           props.shopHandler(Shopformik);
         }}
       >
-        Next
+        Submit
       </button>
     </>
   );
@@ -224,7 +227,7 @@ export const ProductForm = (props) => {
         className={classes.submit}
         onClick={() => props.productHandler(Productformik)}
       >
-        Next
+        Submit
       </button>
     </>
   );
@@ -259,8 +262,13 @@ const AddForm = (props) => {
   };
 
   const handleSubmit = () => {
-    shopForm.handleSubmit();
-    productForm.handleSubmit();
+    if (shopForm.values) {
+      shopForm.handleSubmit();
+    }
+    if (productForm.values) {
+      productForm.handleSubmit();
+    }
+    return;
   };
 
   const closing = () => {
@@ -287,6 +295,19 @@ const AddForm = (props) => {
     }
   };
 
+  const stepIcons = (step) => {
+    switch (step) {
+      case 0:
+        return <AddShoppingCartIcon />;
+      case 1:
+        return <CategoryIcon />;
+      case 2:
+        return <CheckCircleOutlineIcon />;
+      default:
+        return "Error";
+    }
+  };
+
   return (
     <Box
       component="form"
@@ -296,10 +317,13 @@ const AddForm = (props) => {
       onSubmit={handleSubmit}
       className={classes.form}
     >
-      <Stepper activeStep={activeStep}>
-        {steps.map((index, label) => {
+      <Stepper activeStep={activeStep} alternativeLabel>
+        {steps.map((label) => {
           return (
-            <Step key={index}>
+            <Step key={label}>
+              {/* <StepLabel StepIconComponent={stepIcons(activeStep)}>
+                {label}
+              </StepLabel> */}
               <StepLabel>{label}</StepLabel>
             </Step>
           );
@@ -339,7 +363,7 @@ const AddForm = (props) => {
                   // className={classes.close}
                   onClick={() => handleSubmit()}
                 >
-                  Submit
+                  Finish
                 </Typography>
               ) : (
                 "Next"
