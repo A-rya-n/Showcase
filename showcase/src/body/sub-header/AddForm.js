@@ -12,9 +12,9 @@ import {
   StepLabel,
   Button,
 } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import CategoryIcon from "@mui/icons-material/Category";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+// import CategoryIcon from "@mui/icons-material/Category";
+// import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import classes from "./AddForm.module.css";
 
 const steps = ["Shop Details", "Product Details", "Finish"];
@@ -295,18 +295,18 @@ const AddForm = (props) => {
     }
   };
 
-  const stepIcons = (step) => {
-    switch (step) {
-      case 0:
-        return <AddShoppingCartIcon />;
-      case 1:
-        return <CategoryIcon />;
-      case 2:
-        return <CheckCircleOutlineIcon />;
-      default:
-        return "Error";
-    }
-  };
+  // const stepIcons = (step) => {
+  //   switch (step) {
+  //     case 0:
+  //       return <AddShoppingCartIcon />;
+  //     case 1:
+  //       return <CategoryIcon />;
+  //     case 2:
+  //       return <CheckCircleOutlineIcon />;
+  //     default:
+  //       return "Error";
+  //   }
+  // };
 
   return (
     <Box
