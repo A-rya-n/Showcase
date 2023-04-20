@@ -1,44 +1,5 @@
 {
   "products": [
-    {
-      "Pname": "Final Fantasy II",
-      "Pcategory": "Games",
-      "price": 565,
-      "mdate": "2023-04-16",
-      "desc": "An RPG japanese game",
-      "Sno": "A8",
-      "Sname": "Square Enix",
-      "id": 2
-    },
-    {
-      "Pname": "Mercedes A-class",
-      "Pcategory": "Car",
-      "price": 8000000,
-      "mdate": "2023-04-16",
-      "desc": "A luxury hatchback car",
-      "Sno": "A6",
-      "Sname": "Mercedes",
-      "id": 3
-    },
-    {
-      "Pname": "iPhone 13 mini",
-      "Pcategory": "Smartphone",
-      "price": 78000,
-      "mdate": "2023-04-03",
-      "desc": "An apple phone",
-      "Sno": "A8",
-      "Sname": "Apple",
-      "id": 4
-    },
-    {
-      "Pname": "Samsung s8",
-      "Pcategory": "Smartphone",
-      "price": 56000,
-      "mdate": "2023-04-16",
-      "desc": "A Samsung phone",
-      "Sno": "A10",
-      "Sname": "Samsung",
-      "id": 5
-    }
+    
   ]
 }
