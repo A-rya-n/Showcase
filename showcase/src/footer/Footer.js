@@ -18,7 +18,7 @@ const Footer = () => {
             <Typography variant="h6" sx={{ marginLeft: 3, marginRight: 3 }}>
               FOOTER
             </Typography>
-            <span>
+            <span style={{ marginRight: 20 }}>
               -----------------------------------------------------------------------------------------------
             </span>
             <Logo />
