@@ -18,7 +18,6 @@ export const AddProduct = async (data) => {
   }
 };
 
-
 export const DeleteShop = async (id) => {
   try {
     return await axios.delete(`${url}/${id}`);
@@ -34,17 +33,9 @@ export const DeleteProduct = async (num, nam) => {
   }
 };
 
-
 export const GetShop = async (name) => {
   try {
     return await axios.get(`${url}?name=${name}`);
-  } catch (error) {
-    console.log("Error: ", error.message);
-  }
-};
-export const GetProduct = async (no, name) => {
-  try {
-    return await axios.get(`${urlP}?Sno=${no}&Sname=${name}`);
   } catch (error) {
     console.log("Error: ", error.message);
   }
