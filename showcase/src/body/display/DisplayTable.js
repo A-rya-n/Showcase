@@ -9,6 +9,7 @@ import {
   Paper,
   Button,
   TablePagination,
+  Divider,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -138,6 +139,7 @@ const DisplayTable = ({ Data }) => {
             ))}
           </TableBody>
         </Table>
+        <Divider />
         <TablePagination
           component="div"
           count={Data.length}
