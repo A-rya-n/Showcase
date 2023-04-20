@@ -10,8 +10,11 @@ import {
   Button,
   TablePagination,
   Divider,
+  Box,
+  Typography,
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DisplayView from "./DisplayView";
 import { DeleteShop, DeleteProduct } from "../../data/Edit";
@@ -141,17 +144,34 @@ const DisplayTable = ({ Data }) => {
               ))}
             </TableBody>
           </Table>
-        ) : null}
-        <Divider />
+        ) : (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "360px",
+            }}
+          >
+            <ReportGmailerrorredIcon fontSize="large" />
+            <Typography sx={{ marginLeft: "5px" }}>
+              Click 'ADD' to create your shop.
+            </Typography>
+          </Box>
+        )}
+
         {pageInfo.length > 10 ? (
-          <TablePagination
-            component="div"
-            count={Data.length}
-            page={page}
-            onPageChange={handleChangePage}
-            rowsPerPage={rowsPerPage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
+          <>
+            <Divider />
+            <TablePagination
+              component="div"
+              count={Data.length}
+              page={page}
+              onPageChange={handleChangePage}
+              rowsPerPage={rowsPerPage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </>
         ) : null}
       </TableContainer>
     </>

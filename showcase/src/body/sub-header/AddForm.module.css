@@ -51,6 +51,9 @@
 .submit:active {
   background-color: #06b;
 }
+.submit:disabled {
+  background-color: darkgreen;
+}
 
 .close {
   background-color: brown;

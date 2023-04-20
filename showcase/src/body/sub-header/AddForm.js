@@ -55,6 +55,7 @@ const productValidationSchema = Yup.object({
 });
 
 export const ShopForm = (props) => {
+  const [disabled, setDisable] = useState(false);
   const Shopformik = useFormik({
     initialValues: {
       no: "",
@@ -126,11 +127,16 @@ export const ShopForm = (props) => {
         ) : null}
       </div>
       <button
-        // type="submit"
         type="button"
+        disabled={disabled}
         className={classes.submit}
         onClick={() => {
-          props.shopHandler(Shopformik);
+          if (Shopformik.dirty) {
+            props.shopHandler(Shopformik);
+            setDisable(true);
+          } else {
+            return;
+          }
         }}
       >
         Submit
@@ -140,6 +146,7 @@ export const ShopForm = (props) => {
 };
 
 export const ProductForm = (props) => {
+  const [disabled, setDisable] = useState(false);
   const Productformik = useFormik({
     initialValues: {
       Pname: "",
@@ -224,8 +231,14 @@ export const ProductForm = (props) => {
       </div>
       <button
         type="button"
+        disabled={disabled}
         className={classes.submit}
-        onClick={() => props.productHandler(Productformik)}
+        onClick={() => {
+          if (Productformik.dirty) {
+            props.productHandler(Productformik);
+            setDisable(true);
+          } else return;
+        }}
       >
         Submit
       </button>
@@ -295,19 +308,6 @@ const AddForm = (props) => {
     }
   };
 
-  // const stepIcons = (step) => {
-  //   switch (step) {
-  //     case 0:
-  //       return <AddShoppingCartIcon />;
-  //     case 1:
-  //       return <CategoryIcon />;
-  //     case 2:
-  //       return <CheckCircleOutlineIcon />;
-  //     default:
-  //       return "Error";
-  //   }
-  // };
-
   return (
     <Box
       component="form"
@@ -321,9 +321,6 @@ const AddForm = (props) => {
         {steps.map((label) => {
           return (
             <Step key={label}>
-              {/* <StepLabel StepIconComponent={stepIcons(activeStep)}>
-                {label}
-              </StepLabel> */}
               <StepLabel>{label}</StepLabel>
             </Step>
           );
@@ -358,11 +355,7 @@ const AddForm = (props) => {
 
             <Button onClick={handleNext}>
               {activeStep === steps.length - 1 ? (
-                <Typography
-                  type="submit"
-                  // className={classes.close}
-                  onClick={() => handleSubmit()}
-                >
+                <Typography type="submit" onClick={() => handleSubmit()}>
                   Finish
                 </Typography>
               ) : (
