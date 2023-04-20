@@ -4,7 +4,6 @@ import { Box, Button, Drawer } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { createTheme } from "@mui/system";
 import AddForm from "./AddForm";
-// import drawerImage from "../../assets/off-white.jpg";
 
 const btn = createTheme({
   palette: {
@@ -20,11 +19,6 @@ const style = {
   bgcolor: "#FEFF86",
   p: 4,
 };
-// const styles = (theme) => ({
-//   drawerPaper: {
-//     backgroundImage: `url(${drawerImage})`,
-//   },
-// });
 
 const Add = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

@@ -1,5 +1,15 @@
+import React, { useState } from "react";
+
 import Box from "@mui/material/Box";
-import { Typography, Modal, Backdrop, Divider, Chip } from "@mui/material";
+import {
+  Typography,
+  Modal,
+  Backdrop,
+  Divider,
+  Chip,
+  Button,
+} from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 import DisplayProduct from "./DisplayProduct";
 
 const style = {
@@ -16,20 +26,47 @@ const style = {
   p: 4,
 };
 
+// function DisplayProductView() {
+//   const [open, setOpen] = useState(false);
+//   const handleOpen = () => {
+//     setOpen(true);
+//   };
+//   const handleClose = () => {
+//     setOpen(false);
+//   };
+
+//   return (
+//     <>
+//       <Button onClick={handleOpen}>Open Child Modal</Button>
+//       <Modal
+//         open={open}
+//         onClose={handleClose}
+//         aria-labelledby="child-modal-title"
+//         aria-describedby="child-modal-description"
+//       >
+//         <Box sx={{ ...style, width: 200 }}>
+//           <h2 id="child-modal-title">Text in a child modal</h2>
+//           <p id="child-modal-description">
+//             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+//           </p>
+//           <Button onClick={handleClose}>Close Child Modal</Button>
+//         </Box>
+//       </Modal>
+//     </>
+//   );
+// }
+
 const DisplayView = (props) => {
-  // console.log(props.opened);
   return (
     <div>
       <Backdrop
         open={props.opened}
-        // open={true}
         sx={{ backgroundColor: "rgba( 0 , 0 , 0 , 0.3 )", zIndex: 0 }}
         onClick={props.close}
       />
 
       <Modal
         open={props.opened}
-        // open={true}
         onClose={props.close}
         sx={{ "& .MuiBackdrop-root": { backgroundColor: "transparent" } }}
       >
@@ -84,7 +121,11 @@ const DisplayView = (props) => {
             <Chip label="PRODUCTS" sx={{ color: "white" }} />
           </Divider>
           <DisplayProduct Snum={props.details.no} Snam={props.details.name} />
-          {/* {console.log("Hello",props.details.no, props.details.name)} */}
+          <Box sx={{ margin: 1, display: "flex", justifyContent: "center" }}>
+            <Button sx={{ backgroundColor: "#F34C19", color: "white" }}>
+              ADD PRODUCT <AddIcon />
+            </Button>
+          </Box>
         </Box>
       </Modal>
     </div>
