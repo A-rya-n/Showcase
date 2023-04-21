@@ -1,13 +1,6 @@
 {
   "shops": [
     {
-      "no": "A1",
-      "name": "Toyota",
-      "category": "Automaker",
-      "mail": "toyota.jpn@car.com",
-      "id": 1
-    },
-    {
       "no": "A2",
       "name": "Acer",
       "category": "Electronics",
