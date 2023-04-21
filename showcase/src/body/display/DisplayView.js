@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import * as Yup from "yup";
-// import { useFormik } from "formik";
 
 import Box from "@mui/material/Box";
 import {
@@ -13,7 +11,7 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DisplayProduct from "./DisplayProduct";
-// import { ProductForm } from "../sub-header/AddForm";
+import ProductFormView from "./ProductFormView";
 
 const style = {
   bgcolor: "#343F71",
@@ -29,27 +27,7 @@ const style = {
   p: 4,
 };
 
-// const productValidationSchema = Yup.object({
-//   Pname: Yup.string()
-//     .max(20, "Must be 20 characters or less")
-//     .required("Product name is required"),
-//   Pcategory: Yup.string()
-//     .max(15, "Must be 15 characters or less")
-//     .required("Product category is required"),
-//   price: Yup.string().matches(
-//     /(?=.*?\d)^\$?(([1-9]\d{0,2}(,\d{3})*)|\d+)?(\.\d{1,2})?$/,
-//     "not valid number"
-//   ),
-//   mdate: Yup.date()
-//     .min(new Date("01-01-2009"))
-//     .max(new Date())
-//     .required("Manufacturing data is equired"),
-//   desc: Yup.string()
-//     .max(100, "Description must be 100 characters or less")
-//     .required("Product description must be provided"),
-// });
-
-function AddProductView() {
+function AddProductView(props) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -70,7 +48,7 @@ function AddProductView() {
       </Box>
       <Modal open={open} onClose={handleClose}>
         <Box sx={{ ...style, width: 500 }}>
-          {/* <ProductForm /> */}
+          <ProductFormView shopID={props.Snum} shopName={props.Snam} />
           <Button
             sx={{ backgroundColor: "#F34C19", color: "white" }}
             onClick={handleClose}
@@ -148,7 +126,7 @@ const DisplayView = (props) => {
             <Chip label="PRODUCTS" sx={{ color: "white" }} />
           </Divider>
           <DisplayProduct Snum={props.details.no} Snam={props.details.name} />
-          <AddProductView />
+          <AddProductView Snum={props.details.no} Snam={props.details.name} />
         </Box>
       </Modal>
     </div>

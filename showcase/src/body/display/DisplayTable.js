@@ -76,7 +76,7 @@ const DisplayTable = ({ Data }) => {
         component={Paper}
         style={{
           maxHeight: "inherit",
-          minHeight: "360px",
+          minHeight: "23.7rem",
           width: "85%",
           marginTop: "1.5rem",
           marginLeft: "auto",
