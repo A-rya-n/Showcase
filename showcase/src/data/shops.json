@@ -1,3 +1,46 @@
 {
-  "shops": []
+  "shops": [
+    {
+      "no": "A1",
+      "name": "Toyota",
+      "category": "Automaker",
+      "mail": "toyota.jpn@car.com",
+      "id": 1
+    },
+    {
+      "no": "A2",
+      "name": "Acer",
+      "category": "Electronics",
+      "mail": "acer.laptop@us.com",
+      "id": 2
+    },
+    {
+      "no": "A3",
+      "name": "Apple",
+      "category": "Electronics",
+      "mail": "apple.app@us.com",
+      "id": 3
+    },
+    {
+      "no": "A4",
+      "name": "Longines",
+      "category": "Watchmaker",
+      "mail": "longines.watch@swiss.com",
+      "id": 4
+    },
+    {
+      "no": "A5",
+      "name": "Myntra",
+      "category": "Clothing company",
+      "mail": "my.dress@in.com",
+      "id": 5
+    },
+    {
+      "no": "A6",
+      "name": "Samsung",
+      "category": "Electronics",
+      "mail": "samsung.kr@smart.com",
+      "id": 6
+    }
+  ]
 }

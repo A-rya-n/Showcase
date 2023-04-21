@@ -29,7 +29,7 @@ const DisplayTable = ({ Data }) => {
   });
 
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
   const [pageInfo, setPageInfo] = useState([]);
   const pages = `http://localhost:3000/shops?_page=${
     page + 1
@@ -73,6 +73,7 @@ const DisplayTable = ({ Data }) => {
   return (
     <>
       <TableContainer
+        sx={{ position: "relative" }}
         component={Paper}
         style={{
           maxHeight: "inherit",
@@ -82,7 +83,7 @@ const DisplayTable = ({ Data }) => {
           marginLeft: "auto",
           marginRight: "auto",
           marginBottom: "2rem",
-          // border: "0.5rem outset black",
+
           borderRadius: "20px",
           // boxShadow: "8px 10px 1px grey",
         }}
@@ -159,8 +160,7 @@ const DisplayTable = ({ Data }) => {
             </Typography>
           </Box>
         )}
-
-        {pageInfo.length > 10 ? (
+        {pageInfo.length >= 5 || Data.length >= 5 ? (
           <>
             <Divider />
             <TablePagination

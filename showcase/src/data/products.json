@@ -19,6 +19,26 @@
       "Sno": "A1",
       "Sname": "Toyota",
       "id": 2
+    },
+    {
+      "Pname": "Acer Nitro 5",
+      "Pcategory": "Laptop",
+      "price": 45000,
+      "mdate": "2023-04-15",
+      "desc": "An Acer laptop - core i5 ",
+      "Sno": "A2",
+      "Sname": "Acer",
+      "id": 3
+    },
+    {
+      "Pname": "iPhone 13 mini",
+      "Pcategory": "Smartphone",
+      "price": 87000,
+      "mdate": "2023-04-10",
+      "desc": "An apple smartphone",
+      "Sno": "A3",
+      "Sname": "Apple",
+      "id": 4
     }
   ]
 }

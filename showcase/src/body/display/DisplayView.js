@@ -50,7 +50,19 @@ function AddProductView(props) {
         <Box sx={{ ...style, width: 500 }}>
           <ProductFormView shopID={props.Snum} shopName={props.Snam} />
           <Button
-            sx={{ backgroundColor: "#F34C19", color: "white" }}
+            sx={{
+              backgroundColor: 'darkred',
+              color: "white",
+              borderRadius: "5px",
+              border: 0,
+              boxSizing: "border-box",
+              fontSize: "14px",
+              height: "50px",
+              marginTop: "8px",
+              textAlign: "center",
+              width: "90%",
+              marginLeft:'22px'
+            }}
             onClick={handleClose}
           >
             Close

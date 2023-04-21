@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { AddProduct } from "../../data/Edit";
 
-import { Typography, TextField } from "@mui/material";
+import { Typography, TextField, Button, Divider } from "@mui/material";
+import classes from "./ProductFormView.module.css";
 
 const productValidationSchema = Yup.object({
   Pname: Yup.string()
@@ -26,6 +27,7 @@ const productValidationSchema = Yup.object({
 });
 
 const ProductFormView = (props) => {
+  const [disabled, setDisable] = useState(false);
   const Productformik = useFormik({
     initialValues: {
       Pname: "",
@@ -44,11 +46,17 @@ const ProductFormView = (props) => {
 
   return (
     <>
-      <Typography variant="h5">Register your product here...</Typography>
-
+      <Typography variant="h5" sx={{ margin: 3, marginLeft: 19 }}>
+        Product Details
+      </Typography>
+      <Divider
+        variant="middle"
+        sx={{ marginTop: 3, marginBottom: 3, backgroundColor: "white" }}
+      />
       <div>
         <TextField
-          sx={{ marginBottom: 1 }}
+          className={classes.input}
+          sx={{ marginBottom: 1, color: "white" }}
           id="Pname"
           type="text"
           label="Product Name"
@@ -59,6 +67,7 @@ const ProductFormView = (props) => {
         ) : null}
 
         <TextField
+          className={classes.input}
           sx={{ marginBottom: 1 }}
           id="Pcategory"
           type="text"
@@ -70,6 +79,7 @@ const ProductFormView = (props) => {
         ) : null}
 
         <TextField
+          className={classes.input}
           sx={{ marginBottom: 1 }}
           id="price"
           type="number"
@@ -81,6 +91,7 @@ const ProductFormView = (props) => {
         ) : null}
 
         <TextField
+          className={classes.input}
           sx={{ marginBottom: 1 }}
           id="mdate"
           type="date"
@@ -92,6 +103,7 @@ const ProductFormView = (props) => {
         ) : null}
 
         <TextField
+          className={classes.input}
           id="desc"
           type="text"
           label="Product Description"
@@ -101,16 +113,25 @@ const ProductFormView = (props) => {
           <div style={{ color: "red" }}>{Productformik.errors.desc}</div>
         ) : null}
       </div>
-      <button
+      <Button
+        className={classes.submit}
+        disabled={disabled}
+        sx={{
+          backgroundColor: "#F34C19",
+          color: "white",
+          marginRight: 4,
+          margin: 3,
+        }}
         type="button"
         onClick={() => {
           if (Productformik.dirty) {
             Productformik.handleSubmit();
+            setDisable(true);
           } else return;
         }}
       >
         Submit
-      </button>
+      </Button>
     </>
   );
 };
