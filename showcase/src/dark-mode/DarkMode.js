@@ -1,15 +1,21 @@
-import React, { createContext, useState } from "react";
+import React, { createContext } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggle } from "../features/DarkSlice";
 
 const DarkModeContext = createContext();
 
 const DarkModeProvider = (props) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const dark = useSelector((state) => state.dark.value);
+  const dispatch = useDispatch();
+
+  // const [darkMode, setDarkMode] = useState(false);
   const ToggleMode = () => {
-    setDarkMode(!darkMode);
+    // setDarkMode(!darkMode);
+    dispatch(toggle());
   };
   return (
     <>
-      <DarkModeContext.Provider value={{ darkMode, ToggleMode }}>
+      <DarkModeContext.Provider value={{ dark, ToggleMode }}>
         {props.children}
       </DarkModeContext.Provider>
     </>
