@@ -1,44 +1,5 @@
 {
   "products": [
-    {
-      "Pname": "Toyota Camry",
-      "Pcategory": "Car",
-      "price": 75000,
-      "mdate": "2023-04-15",
-      "desc": "A budget toyota vehicle",
-      "Sno": "A1",
-      "Sname": "Toyota",
-      "id": 1
-    },
-    {
-      "Pname": "Toyota Mirai",
-      "Pcategory": "Car",
-      "price": 90000,
-      "mdate": "2023-04-01",
-      "desc": "A Toyota electric vehicle",
-      "Sno": "A1",
-      "Sname": "Toyota",
-      "id": 2
-    },
-    {
-      "Pname": "Acer Nitro 5",
-      "Pcategory": "Laptop",
-      "price": 45000,
-      "mdate": "2023-04-15",
-      "desc": "An Acer laptop - core i5 ",
-      "Sno": "A2",
-      "Sname": "Acer",
-      "id": 3
-    },
-    {
-      "Pname": "iPhone 13 mini",
-      "Pcategory": "Smartphone",
-      "price": 87000,
-      "mdate": "2023-04-10",
-      "desc": "An apple smartphone",
-      "Sno": "A3",
-      "Sname": "Apple",
-      "id": 4
-    }
+    
   ]
 }
