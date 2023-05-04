@@ -6,7 +6,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import { DarkModeContext } from "../dark-mode/DarkMode";
 
 const Dark = () => {
-  const { darkMode, ToggleMode } = useContext(DarkModeContext);
+  const { dark, ToggleMode } = useContext(DarkModeContext);
   const handleClick = () => {
     ToggleMode();
   };
@@ -18,7 +18,7 @@ const Dark = () => {
       sx={{ mr: 2 }}
       onClick={handleClick}
     >
-      {darkMode ? <Brightness4Icon /> : <LightModeIcon />}
+      {dark ? <Brightness4Icon /> : <LightModeIcon />}
     </IconButton>
   );
 };

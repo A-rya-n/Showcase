@@ -7,9 +7,9 @@ import "./index.css";
 import { DarkModeContext } from "./dark-mode/DarkMode";
 
 const App = () => {
-  const { darkMode } = useContext(DarkModeContext);
+  const { dark } = useContext(DarkModeContext);
   return (
-    <div className={darkMode ? "dark" : "light"}>
+    <div className={dark ? "dark" : "light"}>
       <Header />
       <Body />
       <Footer />
