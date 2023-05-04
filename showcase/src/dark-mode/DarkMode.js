@@ -8,9 +8,7 @@ const DarkModeProvider = (props) => {
   const dark = useSelector((state) => state.dark.value);
   const dispatch = useDispatch();
 
-  // const [darkMode, setDarkMode] = useState(false);
   const ToggleMode = () => {
-    // setDarkMode(!darkMode);
     dispatch(toggle());
   };
   return (

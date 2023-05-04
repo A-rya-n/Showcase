@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const style = {
   position: "relative",
@@ -11,7 +12,9 @@ const style = {
   boxShadow: "1px 2px 3px black",
 };
 
-const Count = (props) => {
+const Count = () => {
+  const data = useSelector((state) => state.data.data);
+  // console.log("Count.js log: ", data);
   return (
     <Box sx={style}>
       <Typography
@@ -23,7 +26,7 @@ const Count = (props) => {
         }}
         variant="button"
       >
-        SHOPS : {props.counting.length}
+        SHOPS : {data.length}
       </Typography>
     </Box>
   );

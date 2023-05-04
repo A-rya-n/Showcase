@@ -1,32 +1,34 @@
 import React from "react";
-import { useEffect, useState } from "react";
+// import { useEffect } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import { fetchData } from "../features/DataSlice";
 
 import SubHeader from "./sub-header/SubHeader";
 import DisplayTable from "./display/DisplayTable";
 
 const Body = () => {
-  const url = "http://localhost:3000/shops";
-  const [info, setInfo] = useState([]);
+  // const dispatch = useDispatch();
+  // const { error } = useSelector((state) => state.data);
+  // const dataStatus = useSelector((state) => state.data.status);
 
-  const fetchData = () => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setInfo(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
+  // useEffect(() => {
+  //   if (dataStatus === "idle") {
+  //     dispatch(fetchData());
+  //   }
+  // }, [dataStatus, dispatch]);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // if (dataStatus === "loading") {
+  //   return <div>Loading...</div>;
+  // }
+
+  // if (dataStatus === "failed") {
+  //   return <div>Error: {error}</div>;
+  // }
 
   return (
     <>
-      <SubHeader Data={info} />
-      <DisplayTable Data={info} />
+      <SubHeader />
+      <DisplayTable />
     </>
   );
 };

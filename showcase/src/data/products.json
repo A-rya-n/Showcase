@@ -1,5 +1,14 @@
 {
   "products": [
-    
+    {
+      "Pname": "Toyota Camry",
+      "Pcategory": "Vehicle",
+      "price": 2500,
+      "mdate": "2023-05-01",
+      "desc": "A budget family toyota car ",
+      "Sno": "A1",
+      "Sname": "Toyota",
+      "id": 1
+    }
   ]
 }

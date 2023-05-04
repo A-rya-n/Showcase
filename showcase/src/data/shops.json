@@ -1,3 +1,11 @@
 {
-  "shops": []
+  "shops": [
+    {
+      "no": "A1",
+      "name": "Toyota",
+      "category": "Automaker",
+      "mail": "toyota.car@jpn.com",
+      "id": 1
+    }
+  ]
 }

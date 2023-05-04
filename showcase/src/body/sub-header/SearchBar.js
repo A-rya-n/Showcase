@@ -4,14 +4,16 @@ import { Box, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton } from "@mui/material";
 import { GetShop } from "../../data/Edit";
+import { useSelector } from "react-redux";
 
-const SearchBar = (props) => {
+const SearchBar = () => {
+  const data = useSelector((state) => state.data);
   const formik = useFormik({
     initialValues: {
       search: "",
     },
     onSubmit: (value) => {
-      props.searching.map((s) => {
+      data.map((s) => {
         if (s.name === value.search) {
           console.log(GetShop(value.search));
         }

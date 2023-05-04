@@ -18,8 +18,11 @@ import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DisplayView from "./DisplayView";
 import { DeleteShop, DeleteProduct } from "../../data/Edit";
+import { useSelector } from "react-redux";
 
-const DisplayTable = ({ Data }) => {
+const DisplayTable = () => {
+  const data = useSelector((state) => state.data);
+
   const [opened, setOpened] = useState(false);
   const [modalInfo, setModalinfo] = useState({
     no: "",
@@ -160,12 +163,12 @@ const DisplayTable = ({ Data }) => {
             </Typography>
           </Box>
         )}
-        {pageInfo.length >= 5 || Data.length >= 5 ? (
+        {pageInfo.length >= 5 || data.length >= 5 ? (
           <>
             <Divider />
             <TablePagination
               component="div"
-              count={Data.length}
+              count={data.length}
               page={page}
               onPageChange={handleChangePage}
               rowsPerPage={rowsPerPage}
