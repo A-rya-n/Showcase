@@ -6,6 +6,13 @@
       "category": "Automaker",
       "mail": "toyota.car@jpn.com",
       "id": 1
+    },
+    {
+      "no": "A2",
+      "name": "Acer",
+      "category": "Electronics",
+      "mail": "acer.electric@us.com",
+      "id": 2
     }
   ]
 }

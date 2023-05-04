@@ -7,13 +7,13 @@ import { GetShop } from "../../data/Edit";
 import { useSelector } from "react-redux";
 
 const SearchBar = () => {
-  const data = useSelector((state) => state.data);
+  const shops = useSelector((state) => state.shops.shops);
   const formik = useFormik({
     initialValues: {
       search: "",
     },
     onSubmit: (value) => {
-      data.map((s) => {
+      shops.map((s) => {
         if (s.name === value.search) {
           console.log(GetShop(value.search));
         }

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Typography, Box } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchShops } from "../../features/ShopSlice";
 
 const style = {
   position: "relative",
@@ -13,8 +14,13 @@ const style = {
 };
 
 const Count = () => {
-  const data = useSelector((state) => state.data.data);
-  // console.log("Count.js log: ", data);
+  const shops = useSelector((state) => state.shops.shops);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchShops());
+  }, [dispatch]);
+
   return (
     <Box sx={style}>
       <Typography
@@ -26,7 +32,7 @@ const Count = () => {
         }}
         variant="button"
       >
-        SHOPS : {data.length}
+        SHOPS : {shops.length}
       </Typography>
     </Box>
   );

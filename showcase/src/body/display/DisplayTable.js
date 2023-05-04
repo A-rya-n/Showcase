@@ -21,7 +21,7 @@ import { DeleteShop, DeleteProduct } from "../../data/Edit";
 import { useSelector } from "react-redux";
 
 const DisplayTable = () => {
-  const data = useSelector((state) => state.data);
+  const shops = useSelector((state) => state.shops.shops);
 
   const [opened, setOpened] = useState(false);
   const [modalInfo, setModalinfo] = useState({
@@ -163,12 +163,12 @@ const DisplayTable = () => {
             </Typography>
           </Box>
         )}
-        {pageInfo.length >= 5 || data.length >= 5 ? (
+        {pageInfo.length >= 5 || shops.length >= 5 ? (
           <>
             <Divider />
             <TablePagination
               component="div"
-              count={data.length}
+              count={shops.length}
               page={page}
               onPageChange={handleChangePage}
               rowsPerPage={rowsPerPage}
