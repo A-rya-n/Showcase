@@ -13,6 +13,8 @@ import {
   Button,
 } from "@mui/material";
 import classes from "./AddForm.module.css";
+import { useDispatch } from "react-redux";
+import { hideModal } from "../../features/ModalSlice";
 
 const steps = ["Shop Details", "Product Details", "Finish"];
 
@@ -254,6 +256,7 @@ const AddForm = (props) => {
   const [activeStep, setActiveStep] = useState(0);
   const [shopForm, setShopForm] = useState("");
   const [productForm, setProductForm] = useState("");
+  const dispatch = useDispatch();
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -281,7 +284,8 @@ const AddForm = (props) => {
   };
 
   const closing = () => {
-    props.closeHandler();
+    // props.closeHandler();
+    dispatch(hideModal());
     window.location.reload();
   };
 

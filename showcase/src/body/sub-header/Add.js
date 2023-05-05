@@ -26,9 +26,6 @@ const Add = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.modal.isOpen);
 
-  const closeDrawer = () => {
-    dispatch(hideModal());
-  };
   const openDrawer = () => {
     dispatch(openModal());
   };
@@ -50,7 +47,7 @@ const Add = () => {
         anchor={"right"}
       >
         <Box sx={style}>
-          <AddForm closeHandler={closeDrawer} openHandler={openDrawer} />
+          <AddForm />
         </Box>
       </Drawer>
     </div>
