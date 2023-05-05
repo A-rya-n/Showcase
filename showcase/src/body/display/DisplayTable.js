@@ -86,9 +86,7 @@ const DisplayTable = () => {
           marginLeft: "auto",
           marginRight: "auto",
           marginBottom: "2rem",
-
           borderRadius: "20px",
-          // boxShadow: "8px 10px 1px grey",
         }}
       >
         {pageInfo.length !== 0 ? (

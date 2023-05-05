@@ -3,7 +3,7 @@ import React from "react";
 import classes from "./Summary.module.css";
 import cssimage from "../assets/coding.jpg";
 
-const Summary = (props) => {
+const Summary = () => {
   return (
     <>
       <div className={classes["main-image"]}>

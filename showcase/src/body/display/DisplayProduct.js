@@ -47,7 +47,6 @@ const DisplayProduct = (props) => {
           <Table>
             <TableHead style={{ backgroundColor: "black" }}>
               <TableRow>
-                {/* <TableCell style={{ color: "white" }}>Shop&nbsp;No.</TableCell> */}
                 <TableCell style={{ color: "white" }} align="left">
                   Name
                 </TableCell>
@@ -100,6 +99,3 @@ const DisplayProduct = (props) => {
 };
 
 export default DisplayProduct;
-
-// import DisplayView from "./DisplayView";
-// import { DeleteShop } from "../../data/Edit";

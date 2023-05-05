@@ -95,7 +95,6 @@ const ProductFormView = (props) => {
           sx={{ marginBottom: 1 }}
           id="mdate"
           type="date"
-          // label="Product Manufacturing date"
           {...Productformik.getFieldProps("mdate")}
         />
         {Productformik.touched.mdate && Productformik.errors.mdate ? (

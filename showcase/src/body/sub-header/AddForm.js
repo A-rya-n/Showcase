@@ -12,9 +12,6 @@ import {
   StepLabel,
   Button,
 } from "@mui/material";
-// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-// import CategoryIcon from "@mui/icons-material/Category";
-// import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import classes from "./AddForm.module.css";
 
 const steps = ["Shop Details", "Product Details", "Finish"];
@@ -211,7 +208,6 @@ export const ProductForm = (props) => {
           className={classes.input}
           id="mdate"
           type="date"
-          // label="Product Manufacturing date"
           {...Productformik.getFieldProps("mdate")}
         />
         {Productformik.touched.mdate && Productformik.errors.mdate ? (
