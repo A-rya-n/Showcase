@@ -51,7 +51,8 @@ function AddProductView(props) {
           <ProductFormView shopID={props.Snum} shopName={props.Snam} />
           <Button
             sx={{
-              backgroundColor: "darkred",
+              backgroundColor: "#f34c19",
+              "&:hover": { backgroundColor: "#8b2000" },
               color: "white",
               borderRadius: "5px",
               border: 0,

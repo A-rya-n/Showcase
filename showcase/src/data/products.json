@@ -1,13 +1,13 @@
 {
   "products": [
     {
-      "Pname": "Toyota Camry",
-      "Pcategory": "Vehicle",
-      "price": 2500,
-      "mdate": "2023-05-01",
-      "desc": "A budget family toyota car ",
+      "Pname": "iPhone 13 mini",
+      "Pcategory": "Smartphone",
+      "price": 81000,
+      "mdate": "2023-05-04",
+      "desc": "An apple smartphone ",
       "Sno": "A1",
-      "Sname": "Toyota",
+      "Sname": "Apple",
       "id": 1
     }
   ]

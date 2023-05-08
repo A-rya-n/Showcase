@@ -1,23 +1,23 @@
 .input {
   background-color: #343f71;
   border-radius: 12px;
-  border: 0;
+  border: 5;
   box-sizing: border-box;
-  color: #eee;
   font-size: 18px;
   height: 100%;
   outline: 0;
   padding: 4px 20px 0;
   width: 100%;
 }
+.input label {
+  color: #eee;
+}
 
 .submit {
   margin-top: 3rem;
-  background-color: #08d;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color: #eee;
   cursor: pointer;
   font-size: 18px;
   height: 50px;
@@ -25,9 +25,6 @@
   text-align: center;
   width: 90%;
 }
-.submit:active {
-  background-color: #06b;
-}
 .submit:disabled {
-  background-color: darkgreen;
+  background-color: rgb(26, 151, 26);
 }

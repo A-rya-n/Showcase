@@ -56,7 +56,7 @@ const ProductFormView = (props) => {
       <div>
         <TextField
           className={classes.input}
-          sx={{ marginBottom: 1, color: "white" }}
+          sx={{ marginBottom: 1 }}
           id="Pname"
           type="text"
           label="Product Name"
@@ -95,6 +95,7 @@ const ProductFormView = (props) => {
           sx={{ marginBottom: 1 }}
           id="mdate"
           type="date"
+          label="Manufacturing Date"
           {...Productformik.getFieldProps("mdate")}
         />
         {Productformik.touched.mdate && Productformik.errors.mdate ? (
@@ -116,7 +117,8 @@ const ProductFormView = (props) => {
         className={classes.submit}
         disabled={disabled}
         sx={{
-          backgroundColor: "#F34C19",
+          backgroundColor: "#f34c19",
+          "&:hover": { backgroundColor: "#8b2000" },
           color: "white",
           marginRight: 4,
           margin: 3,

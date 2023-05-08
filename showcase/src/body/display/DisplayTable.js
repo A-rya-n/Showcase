@@ -66,7 +66,7 @@ const DisplayTable = () => {
     window.location.reload(true);
   };
 
-  const openModal = (id) => {
+  const modalOpen = (id) => {
     setOpened(true);
 
     fetch(`http://localhost:3000/shops/${id}`)
@@ -125,7 +125,7 @@ const DisplayTable = () => {
                       color="info"
                       variant="contained"
                       sx={{ marginRight: 1 }}
-                      onClick={(e) => openModal(d.id)}
+                      onClick={(e) => modalOpen(d.id)}
                     >
                       <VisibilityIcon />
                     </Button>
