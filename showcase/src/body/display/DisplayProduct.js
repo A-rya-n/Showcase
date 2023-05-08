@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { GetProduct } from "../../data/Edit";
 import {
   Table,
   TableBody,

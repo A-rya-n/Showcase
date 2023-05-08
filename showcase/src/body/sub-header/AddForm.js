@@ -252,7 +252,7 @@ export const Finished = () => {
   );
 };
 
-const AddForm = (props) => {
+const AddForm = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [shopForm, setShopForm] = useState("");
   const [productForm, setProductForm] = useState("");
@@ -284,7 +284,6 @@ const AddForm = (props) => {
   };
 
   const closing = () => {
-    // props.closeHandler();
     dispatch(hideModal());
     window.location.reload();
   };
