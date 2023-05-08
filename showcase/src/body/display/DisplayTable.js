@@ -18,18 +18,12 @@ import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DisplayView from "./DisplayView";
 import { DeleteShop, DeleteProduct } from "../../data/Edit";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { openModal, setRowData } from "../../features/ViewSlice";
 
 const DisplayTable = () => {
   const shops = useSelector((state) => state.shops.shops);
-
-  const [opened, setOpened] = useState(false);
-  const [modalInfo, setModalinfo] = useState({
-    no: "",
-    name: "",
-    category: "",
-    mail: "",
-  });
+  const dispatch = useDispatch();
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -67,11 +61,11 @@ const DisplayTable = () => {
   };
 
   const modalOpen = (id) => {
-    setOpened(true);
+    dispatch(openModal());
 
     fetch(`http://localhost:3000/shops/${id}`)
       .then((resposne) => resposne.json())
-      .then((res) => setModalinfo(res));
+      .then((res) => dispatch(setRowData(res)));
   };
   return (
     <>
@@ -125,7 +119,7 @@ const DisplayTable = () => {
                       color="info"
                       variant="contained"
                       sx={{ marginRight: 1 }}
-                      onClick={(e) => modalOpen(d.id)}
+                      onClick={() => modalOpen(d.id)}
                     >
                       <VisibilityIcon />
                     </Button>
@@ -136,11 +130,7 @@ const DisplayTable = () => {
                     >
                       <DeleteIcon />
                     </Button>
-                    <DisplayView
-                      opened={opened}
-                      close={() => setOpened(false)}
-                      details={modalInfo}
-                    />
+                    <DisplayView />
                   </TableCell>
                 </TableRow>
               ))}

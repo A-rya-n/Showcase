@@ -12,6 +12,8 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import DisplayProduct from "./DisplayProduct";
 import ProductFormView from "./ProductFormView";
+import { useSelector, useDispatch } from "react-redux";
+import { hideModal } from "../../features/ViewSlice";
 
 const style = {
   bgcolor: "#343F71",
@@ -74,18 +76,21 @@ function AddProductView(props) {
   );
 }
 
-const DisplayView = (props) => {
+const DisplayView = () => {
+  const { isOpen, viewData } = useSelector((state) => state.view);
+  const dispatch = useDispatch();
+
   return (
     <div>
       <Backdrop
-        open={props.opened}
+        open={isOpen}
         sx={{ backgroundColor: "rgba( 0 , 0 , 0 , 0.3 )", zIndex: 0 }}
-        onClick={props.close}
+        onClick={() => dispatch(hideModal())}
       />
 
       <Modal
-        open={props.opened}
-        onClose={props.close}
+        open={isOpen}
+        onClose={() => dispatch(hideModal())}
         sx={{ "& .MuiBackdrop-root": { backgroundColor: "transparent" } }}
       >
         <Box sx={style}>
@@ -98,7 +103,7 @@ const DisplayView = (props) => {
               padding: 2,
             }}
           >
-            {props.details.no}
+            {viewData.no}
           </Typography>
           <Divider
             variant="middle"
@@ -113,7 +118,7 @@ const DisplayView = (props) => {
               marginRight: 2,
             }}
           >
-            {props.details.name}
+            {viewData.name}
           </Typography>
           <Typography
             variant="h3"
@@ -123,7 +128,7 @@ const DisplayView = (props) => {
               display: "inline",
             }}
           >
-            {props.details.category}
+            {viewData.category}
           </Typography>
           <Typography
             variant="h6"
@@ -133,13 +138,13 @@ const DisplayView = (props) => {
               marginTop: 3,
             }}
           >
-            {props.details.mail}
+            {viewData.mail}
           </Typography>
           <Divider variant="middle" sx={{ marginTop: 3, marginBottom: 3 }}>
             <Chip label="PRODUCTS" sx={{ color: "white" }} />
           </Divider>
-          <DisplayProduct Snum={props.details.no} Snam={props.details.name} />
-          <AddProductView Snum={props.details.no} Snam={props.details.name} />
+          <DisplayProduct Snum={viewData.no} Snam={viewData.name} />
+          <AddProductView Snum={viewData.no} Snam={viewData.name} />
         </Box>
       </Modal>
     </div>
